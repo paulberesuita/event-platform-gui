@@ -20,18 +20,18 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-background-secondary border-t border-border mt-16">
+    <footer className="bg-background-secondary border-t border-border mt-12">
       <div className="container-custom py-8">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
           {/* Brand */}
-          <div className="space-y-3">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-button-primary rounded-sm flex items-center justify-center">
-                <span className="text-text-inverse font-bold text-lg">E</span>
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 bg-button-primary rounded flex items-center justify-center">
+                <span className="text-text-inverse font-semibold text-sm">E</span>
               </div>
-              <span className="font-bold text-xl text-text-primary">Events</span>
+              <span className="font-semibold text-base text-text-primary">Events</span>
             </div>
-            <p className="text-sm text-text-secondary leading-body">
+            <p className="text-xs text-text-secondary">
               Discover and create amazing events in your community.
             </p>
           </div>
@@ -39,13 +39,13 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
-              <h4 className="font-semibold text-text-primary mb-3">{category}</h4>
-              <ul className="space-y-2">
+              <h4 className="font-medium text-sm text-text-primary mb-2">{category}</h4>
+              <ul className="space-y-1.5">
                 {links.map((link) => (
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-text-secondary hover:text-text-primary transition-colors duration-200"
+                      className="text-xs text-text-secondary hover:text-text-primary transition-colors duration-200"
                     >
                       {link.label}
                     </Link>
@@ -57,8 +57,8 @@ export default function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="mt-8 pt-6 border-t border-border">
-          <p className="text-sm text-text-secondary text-center">
+        <div className="mt-6 pt-5 border-t border-border">
+          <p className="text-xs text-text-secondary text-center">
             © 2025 Events Platform. All rights reserved.
           </p>
         </div>

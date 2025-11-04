@@ -13,19 +13,19 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-background-secondary border-b border-border">
+    <header className="bg-background-primary border-b border-border">
       <div className="container-custom">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-14">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-button-primary rounded-sm flex items-center justify-center">
-              <span className="text-text-inverse font-bold text-lg">E</span>
+          <Link href="/" className="flex items-center gap-2">
+            <div className="w-7 h-7 bg-button-primary rounded flex items-center justify-center">
+              <span className="text-text-inverse font-semibold text-sm">E</span>
             </div>
-            <span className="font-bold text-xl text-text-primary">Events</span>
+            <span className="font-semibold text-base text-text-primary">Events</span>
           </Link>
 
           {/* Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center gap-6">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -49,7 +49,7 @@ export default function Header() {
           {/* Mobile Menu Button */}
           <button className="md:hidden text-text-primary">
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5"
               fill="none"
               strokeLinecap="round"
               strokeLinejoin="round"

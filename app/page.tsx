@@ -11,23 +11,23 @@ export default function HomePage() {
     <div>
       {/* Hero Section */}
       <section className="bg-background-secondary border-b border-border">
-        <div className="container-custom py-16 md:py-24">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-6xl font-bold text-text-primary mb-4">
+        <div className="container-custom py-12 md:py-16">
+          <div className="max-w-2xl">
+            <h1 className="font-bold text-text-primary mb-3">
               Discover Events That Matter
             </h1>
-            <p className="text-xl text-text-secondary mb-8 leading-body">
-              Connect with your community through amazing events. From music festivals to tech conferences, find experiences that inspire you.
+            <p className="text-base text-text-secondary mb-6">
+              Connect with your community through curated events. From music festivals to tech conferences, find experiences that inspire you.
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Link href="/events">
                 <Button variant="primary" className="w-full sm:w-auto">
-                  Browse All Events
+                  Browse Events
                 </Button>
               </Link>
               <Link href="/create">
                 <Button variant="secondary" className="w-full sm:w-auto">
-                  Create an Event
+                  Create Event
                 </Button>
               </Link>
             </div>
@@ -36,9 +36,9 @@ export default function HomePage() {
       </section>
 
       {/* Featured Events */}
-      <section className="container-custom py-12">
-        <div className="flex items-center justify-between mb-6">
-          <h2 className="text-3xl font-semibold text-text-primary">
+      <section className="container-custom py-10">
+        <div className="flex items-center justify-between mb-5">
+          <h2 className="font-semibold text-text-primary">
             Featured Events
           </h2>
           <Link href="/events">
@@ -46,7 +46,7 @@ export default function HomePage() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {featuredEvents.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
@@ -54,21 +54,20 @@ export default function HomePage() {
       </section>
 
       {/* Browse by Category */}
-      <section className="bg-background-secondary border-y border-border py-12">
+      <section className="bg-background-secondary border-y border-border py-10">
         <div className="container-custom">
-          <h2 className="text-3xl font-semibold text-text-primary mb-6">
+          <h2 className="font-semibold text-text-primary mb-5">
             Browse by Category
           </h2>
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
             {CATEGORIES.map((category) => (
               <Link
                 key={category}
                 href={`/events?category=${category}`}
-                className="card p-6 text-center hover:border-2 hover:border-text-primary transition-all duration-200"
+                className="card p-4 text-center transition-all duration-200"
               >
-                <div className="text-2xl mb-2">{getCategoryIcon(category)}</div>
-                <h3 className="font-medium text-text-primary">{category}</h3>
+                <h3 className="text-sm font-medium text-text-primary">{category}</h3>
               </Link>
             ))}
           </div>
@@ -76,30 +75,30 @@ export default function HomePage() {
       </section>
 
       {/* Stats Section */}
-      <section className="container-custom py-12">
+      <section className="container-custom py-10">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div>
-            <div className="text-4xl font-bold text-text-primary mb-2">1,200+</div>
-            <div className="text-text-secondary">Events Created</div>
+            <div className="text-3xl font-bold text-text-primary mb-1">1,200+</div>
+            <div className="text-sm text-text-secondary">Events Created</div>
           </div>
           <div>
-            <div className="text-4xl font-bold text-text-primary mb-2">50K+</div>
-            <div className="text-text-secondary">Community Members</div>
+            <div className="text-3xl font-bold text-text-primary mb-1">50K+</div>
+            <div className="text-sm text-text-secondary">Community Members</div>
           </div>
           <div>
-            <div className="text-4xl font-bold text-text-primary mb-2">100+</div>
-            <div className="text-text-secondary">Cities Worldwide</div>
+            <div className="text-3xl font-bold text-text-primary mb-1">100+</div>
+            <div className="text-sm text-text-secondary">Cities Worldwide</div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="bg-button-primary text-text-inverse py-16">
+      <section className="bg-button-primary text-text-inverse py-12">
         <div className="container-custom text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="font-bold mb-3">
             Ready to Host Your Own Event?
           </h2>
-          <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
+          <p className="text-sm mb-6 opacity-90 max-w-xl mx-auto">
             Create memorable experiences for your community. Our platform makes it easy to organize and promote your events.
           </p>
           <Link href="/create">
@@ -111,21 +110,4 @@ export default function HomePage() {
       </section>
     </div>
   );
-}
-
-// Helper function to get category icons (you can customize these)
-function getCategoryIcon(category: string): string {
-  const icons: { [key: string]: string } = {
-    Music: '🎵',
-    Tech: '💻',
-    Art: '🎨',
-    Sports: '⚽',
-    Food: '🍔',
-    Business: '💼',
-    Health: '🧘',
-    Education: '📚',
-    Entertainment: '🎭',
-    Other: '✨',
-  };
-  return icons[category] || '✨';
 }

@@ -38,12 +38,12 @@ export default function EventsPage() {
   return (
     <div className="container-custom py-8">
       {/* Header */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-text-primary mb-3">
+      <div className="mb-6">
+        <h1 className="font-bold text-text-primary mb-2">
           Discover Events
         </h1>
-        <p className="text-lg text-text-secondary">
-          Find your next adventure from {mockEvents.length} amazing events
+        <p className="text-sm text-text-secondary">
+          Find your next adventure from {mockEvents.length} events
         </p>
       </div>
 
@@ -159,18 +159,17 @@ export default function EventsPage() {
 
       {/* Events Grid */}
       {filteredEvents.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredEvents.map((event) => (
             <EventCard key={event.id} event={event} />
           ))}
         </div>
       ) : (
-        <div className="text-center py-16">
-          <div className="text-6xl mb-4">🔍</div>
-          <h3 className="text-2xl font-semibold text-text-primary mb-2">
+        <div className="text-center py-12">
+          <h3 className="text-lg font-semibold text-text-primary mb-2">
             No events found
           </h3>
-          <p className="text-text-secondary mb-6">
+          <p className="text-sm text-text-secondary mb-5">
             Try adjusting your filters or search query
           </p>
           <button
